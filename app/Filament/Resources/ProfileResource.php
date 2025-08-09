@@ -19,11 +19,19 @@ class ProfileResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $label = 'Profil';
+
+    protected static ?string $pluralLabel = 'Profil';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\RichEditor::make('sejarah')    
+                    ->label('Sejarah')
+                    ->placeholder('Masukkan sejarah desa')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -31,13 +39,19 @@ class ProfileResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('sejarah')
+                    ->label('Sejarah')
+                    ->limit(100) 
+                    ->html() 
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

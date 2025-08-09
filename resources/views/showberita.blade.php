@@ -5,46 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $berita->judul }} - Desa Plumbon</title>
     <meta name="description" content="{{ $berita->getExcerpt(160) }}">
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite('resources/css/app.css')
     <style>
-        /* Custom styles for article content */
-        .prose {
-            color: #374151;
-            max-width: none;
+        /* Dropdown hover effects */
+        .dropdown-parent:hover .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
         }
-        .prose h1, .prose h2, .prose h3, .prose h4 {
-            color: #111827;
-            font-weight: 600;
+        .dropdown-parent:hover .dropdown-arrow {
+            transform: rotate(180deg) !important;
         }
-        .prose p {
-            margin-bottom: 1rem;
-            line-height: 1.7;
+        /* Sub-dropdown hover effects */
+        .sub-dropdown-parent:hover .sub-dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateX(0) !important;
         }
-        .prose ul, .prose ol {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
+        .sub-dropdown-parent:hover .sub-dropdown-arrow {
+            transform: rotate(90deg) !important;
         }
-        .prose blockquote {
-            border-left: 4px solid #d1d5db;
-            padding-left: 1rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: #6b7280;
+        /* Ensure dropdown stays visible when hovering over the menu itself */
+        .dropdown-menu:hover {
+            opacity: 1 !important;
+            visibility: visible !important;
         }
-        
-        /* Breadcrumb styling */
-        .breadcrumb-separator::before {
-            content: "›";
-            margin: 0 0.5rem;
-            color: #9ca3af;
+        .sub-dropdown-menu:hover {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        /* Add some padding to prevent gaps that might break hover */
+        .dropdown-parent {
+            position: relative;
+        }
+        .dropdown-menu {
+            margin-top: 0;
+            padding-top: 8px;
+        }
+        .sub-dropdown-menu {
+            margin-left: 0;
+            padding-left: 4px;
         }
     </style>
 </head>
 
 <body class="min-h-screen bg-gray-50">
-    <!-- Header with Navigation -->
     <header class="relative z-50">
-        <nav class="fixed top-0 w-full p-4 bg-gray-800 bg-opacity-95 backdrop-blur-sm shadow-lg transition-all duration-300">
+        <nav class="fixed top-0 w-full p-4 bg-opacity-90 transition-all duration-300 bg-gray-800">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
@@ -52,68 +59,65 @@
                     <img src="{{ asset('images/logo-kkn.png') }}" alt="logo" class="w-full h-12 object-cover">
                     <img src="{{ asset('images/logo-plumbon.png') }}" alt="logo" class="w-full h-12 object-cover">
                 </div>
-                
+
                 <!-- Navigation Menu -->
                 <ul class="hidden md:flex space-x-10 text-white">
-                    <li><a href="/" class="hover:text-yellow-400 transition duration-300">Beranda</a></li>
-                    <li><a href="/profil" class="hover:text-yellow-400 transition duration-300">Profil</a></li>
-                    
-                    <!-- Dropdown Menu with proper hover handling -->
-                    <li class="relative group">
+                    <li><a href="/" class="hover:text-yellow-400 transition duration-300 {{ Request::is('/') ? 'border-b-2 border-white' : '' }}">Beranda</a></li>
+                    <li><a href="/profil" class="hover:text-yellow-400 transition duration-300 {{ Request::is('profil') ? 'border-b-2 border-white' : '' }}">Profil</a></li>
+
+                    <!-- Dropdown Data Surveilance -->
+                    <li class="relative dropdown-parent">
                         <a href="#" class="flex items-center space-x-1 hover:text-yellow-400 transition duration-300">
-                            <span>Data Desa</span>
-                            <svg class="w-4 h-4 transition-transform duration-150 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <span>Data Surveilance</span>
+                            <svg class="w-4 h-4 transition-transform duration-150 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        
-                        <div class="absolute left-0 top-full w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="dropdown-menu absolute left-0 top-full w-40 opacity-0 invisible transition-all duration-200 ease-in-out transform translate-y-2 z-50">
                             <div class="bg-white text-black shadow-xl rounded-lg overflow-hidden mt-2 border border-gray-200">
-                                <a href="/data/sumberair" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">
-                                    <span>Data Sumber Air</span>
-                                </a>
-                                <a href="/data/kependudukan" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">
-                                    <span>Data Kependudukan</span>
-                                </a>
-                                <a href="/data/kesehatan" class="block px-4 py-3 hover:bg-gray-100 transition duration-200">
-                                    <span>Data Kesehatan</span>
-                                </a>
+                                <a href="/surveilance/sdgs3" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">SDG 3</a>
+                                <a href="/surveilance/sdgs6" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">SDG 6</a>
+                                <a href="/surveilance/sdgs11" class="block px-4 py-3 hover:bg-gray-100 transition duration-200">SDG 11</a>
                             </div>
                         </div>
                     </li>
 
-                    <li class="relative group">
-                        <a href="#" class="flex items-center space-x-1 hover:text-yellow-400 transition duration-300 border-b-2 border-yellow-400">
-                            <span>Layanan</span>
-                            <svg class="w-4 h-4 transition-transform duration-150 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Dropdown Data Sumber Air -->
+                    <li class="relative dropdown-parent">
+                        <a href="#" class="flex items-center space-x-1 hover:text-yellow-400 transition duration-300">
+                            <span>Data Sumber Air</span>
+                            <svg class="w-4 h-4 transition-transform duration-150 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        
-                        <div class="absolute left-0 top-full w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="dropdown-menu absolute left-0 top-full w-48 opacity-0 invisible transition-all duration-200 ease-in-out transform translate-y-2 z-50">
                             <div class="bg-white text-black shadow-xl rounded-lg overflow-hidden mt-2 border border-gray-200">
-                                <a href="/layanan/berita" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100 bg-yellow-50">
-                                    <span>Berita</span>
-                                </a>
-                                <a href="/layanan/pengaduan" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">
-                                    <span>Pengaduan Masyarakat</span>
-                                </a>
-                                <a href="/layanan/pembuatanktp" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">
-                                    <span>Pembuatan KTP</span>
-                                </a>
-                                <a href="/layanan/pembuatankk" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">
-                                    <span>Pembuatan KK</span>
-                                </a>
-                                <a href="/layanan/pembuatanakte" class="block px-4 py-3 hover:bg-gray-100 transition duration-200">
-                                    <span>Pembuatan Akte Kelahiran</span>
-                                </a>
+                                <a href="/sumberair/airbersih" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">Titik Air Bersih</a>
+                                <a href="/sumberair/petakekeringan" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">Peta Kekeringan</a>
+                                <a href="/sumberair/petacurahhujan" class="block px-4 py-3 hover:bg-gray-100 transition duration-200">Peta Curah Hujan</a>
                             </div>
                         </div>
                     </li>
-                    <li><a href="/umkm" class="hover:text-yellow-400 transition duration-300">UMKM</a></li>
-                    <li><a href="/produk-kkn" class="hover:text-yellow-400 transition duration-300">Produk KKN</a></li>
+
+                    <!-- Dropdown Layanan -->
+                    <li class="relative dropdown-parent">
+                        <a href="#" class="flex items-center space-x-1 hover:text-yellow-400 transition duration-300">
+                            <span>Layanan</span>
+                            <svg class="w-4 h-4 transition-transform duration-150 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 top-full w-56 opacity-0 invisible transition-all duration-200 ease-in-out transform translate-y-2 z-50">
+                            <div class="bg-white text-black shadow-xl rounded-lg overflow-hidden mt-2 border border-gray-200">
+                                <a href="/layanan/berita" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">Berita</a>
+                                <a href="/layanan" class="block px-4 py-3 hover:bg-gray-100 transition duration-200 border-b border-gray-100">Layanan</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="/produk-kkn" class="hover:text-yellow-400 transition duration-300 {{ Request::is('produk-kkn') ? 'border-b-2 border-white' : '' }}">Produk KKN</a></li>
                 </ul>
-                
+
                 <!-- Mobile Menu Button -->
                 <button class="md:hidden text-white">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,19 +129,6 @@
     </header>
 
     <main class="pt-20">
-        <!-- Breadcrumb -->
-        <section class="bg-white border-b border-gray-200">
-            <div class="max-w-4xl mx-auto px-6 py-4">
-                <nav class="flex text-sm text-gray-600">
-                    <a href="/" class="hover:text-gray-900">Beranda</a>
-                    <span class="breadcrumb-separator"></span>
-                    <a href="/layanan/berita" class="hover:text-gray-900">Berita</a>
-                    <span class="breadcrumb-separator"></span>
-                    <span class="text-gray-900">{{ Str::limit($berita->judul, 50) }}</span>
-                </nav>
-            </div>
-        </section>
-
         <!-- Article Header -->
         <section class="bg-white">
             <div class="max-w-4xl mx-auto px-6 py-8">
@@ -304,77 +295,6 @@
         @endif
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-                <div>
-                    <div class="flex flex-col justify-between mb-4 gap-4">
-                        <div>
-                            <img src="{{ asset('images/logo-plumbon.png') }}" alt="logo" class="w-4/5 h-auto object-cover">
-                        </div>
-                        <div class="flex flex-row space-x-5">
-                            <img src="{{ asset('images/logo-undip.png') }}" alt="logo" class="w-14 h-auto object-cover">
-                            <img src="{{ asset('images/logo-kkn.png') }}" alt="logo" class="w-14 h-auto object-cover">
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Navigasi</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/" class="hover:text-yellow-400">Beranda</a></li>
-                        <li><a href="/profil" class="hover:text-yellow-400">Profil Desa</a></li>
-                        <li><a href="/layanan" class="hover:text-yellow-400">Layanan</a></li>
-                        <li><a href="/umkm" class="hover:text-yellow-400">UMKM</a></li>
-                        <li><a href="/produk-kkn" class="hover:text-yellow-400">Produk KKN</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Data Desa</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/data/sumberair" class="hover:text-yellow-400">Data Sumber Air Bersih</a></li>
-                        <li><a href="/data/kependudukan" class="hover:text-yellow-400">Data Kependudukan</a></li>
-                        <li><a href="/data/kesehatan" class="hover:text-yellow-400">Data Kesehatan</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-semibold mb-4">Unduhan</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-yellow-400">Formulir Surveilance</a></li>
-                        <li><a href="#" class="hover:text-yellow-400">Desain Revitalisasi Lapangan</a></li>
-                        <li><a href="#" class="hover:text-yellow-400">Flipbook Profil Desa</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Kontak</h4>
-                    <div class="space-y-2 text-sm">
-                        <p>Plumbon, Kec. Mojolaban, Kab. Sukoharjo, Jawa Tengah</p>
-                        <p>desaplumbon@gmail.com</p>
-                        <p>+62812345678</p>
-                    </div>
-                    
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700">
-                            <span class="text-xs">f</span>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500">
-                            <span class="text-xs">t</span>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700">
-                            <span class="text-xs">w</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm opacity-80">
-                <p>&copy; 2025 Desa Plumbon & KKN-T IDBU 29 UNDIP | All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <x-footer />
 </body>
 </html>

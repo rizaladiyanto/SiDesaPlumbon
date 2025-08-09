@@ -113,8 +113,7 @@
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-800 mb-4">Tentang Kami</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae tempor dolor, ac dignissim dui. 
-                            Aliquam erat volutpat. Ut eu condimentor eget. Donec aliquet nisl at pulvinar rutrum. Donec aliquet nisl at pulvinar rutrum. Donec aliquet nisl at pulvinar rutrum. Ut eu condimentor eget. Donec aliquet nisl at pulvinar rutrum.
+                            {!! $home->about !!}
                         </p>
                     </div>
                 </div>

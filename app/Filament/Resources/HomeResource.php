@@ -39,7 +39,12 @@ class HomeResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('about')
+                    ->label('Tentang Kami')
+                    ->limit(100) // Batasi jumlah karakter yang ditampilkan, atau bisa juga menggunakan 'getExcerpt'
+                    ->html() // Menggunakan HTML jika ingin menampilkan format HTML dari RichEditor
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //
