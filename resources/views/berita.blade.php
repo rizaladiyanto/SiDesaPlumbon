@@ -10,49 +10,6 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-
-        <style>
-            /* Dropdown hover effects */
-            .dropdown-parent:hover .dropdown-menu {
-                opacity: 1 !important;
-                visibility: visible !important;
-                transform: translateY(0) !important;
-            }
-            .dropdown-parent:hover .dropdown-arrow {
-                transform: rotate(180deg) !important;
-            }
-            /* Sub-dropdown hover effects */
-            .sub-dropdown-parent:hover .sub-dropdown-menu {
-                opacity: 1 !important;
-                visibility: visible !important;
-                transform: translateX(0) !important;
-            }
-            .sub-dropdown-parent:hover .sub-dropdown-arrow {
-                transform: rotate(90deg) !important;
-            }
-            /* Ensure dropdown stays visible when hovering over the menu itself */
-            .dropdown-menu:hover {
-                opacity: 1 !important;
-                visibility: visible !important;
-            }
-            .sub-dropdown-menu:hover {
-                opacity: 1 !important;
-                visibility: visible !important;
-            }
-            /* Add some padding to prevent gaps that might break hover */
-            .dropdown-parent {
-                position: relative;
-            }
-            .dropdown-menu {
-                margin-top: 0;
-                padding-top: 8px;
-            }
-            .sub-dropdown-menu {
-                margin-left: 0;
-                padding-left: 4px;
-            }
-        </style>
-
     </head>
     <body class="min-h-screen bg-gray-100">
         <x-header />
@@ -62,12 +19,11 @@
             <section id="home" class="relative w-full h-screen hero-bg flex items-center justify-center"
                 style="background-image: url('{{ asset('images/hero-layanan.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;"
             >
-                <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
+                <!-- Dark overlay layers - FIXED -->    
+                <div class="absolute inset-0 top-0 left-0 bg-gradient-to-b from-black via-black/50 to-transparent h-56 opacity-40 z-10"></div>
+                <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black via-black/50 to-transparent z-20"></div>
                 
-                <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black/80 to-transparent"></div>
-                
-                <div id="typingEffect" class="relative z-10 text-center text-4xl text-white px-6 md:px-12 max-w-4xl md:text-6xl font-bold tracking-wide">
-
+                <div id="typingEffect" class="relative z-30 text-center text-4xl text-white px-6 md:px-12 max-w-4xl md:text-6xl font-bold tracking-wide typing-cursor">
                 </div>
             </section>
 
@@ -82,7 +38,7 @@
                     @if($berita->count() > 0)
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                             @foreach($berita as $item)
-                                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-200">
+                                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-200 fade-in-up">
                                     <div class="h-48 w-full overflow-hidden">
                                         @if($item->gambar)
                                             <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" class="w-full h-full object-cover hover:scale-105 transition duration-200">
@@ -188,7 +144,6 @@
         <x-footer />
 
         <script>
-            // Simple scroll effect for navbar
             window.addEventListener('scroll', function() {
                 const navbar = document.querySelector('nav');
                 if (window.scrollY > 200) {
@@ -208,14 +163,29 @@
                 if (i < text.length) {
                     typingEffect.innerHTML += text.charAt(i);
                     i++;
-                    setTimeout(typeWriter, 80); // Delay setiap karakter
+                    setTimeout(typeWriter, 80);
                 } else {
-                    typingEffect.classList.remove('typing'); // Hapus border saat selesai
+                    typingEffect.classList.remove('typing'); 
                 }
             }
 
-            typingEffect.classList.add('typing'); // Menambahkan kelas typing untuk efek border
+            typingEffect.classList.add('typing'); 
             typeWriter();
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const elementsToAnimate = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                elementsToAnimate.forEach(element => {
+                    observer.observe(element);
+                });
+            });
         </script>
     </body>
 </html>

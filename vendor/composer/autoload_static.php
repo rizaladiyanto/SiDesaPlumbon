@@ -633,6 +633,7 @@ class ComposerStaticInit31796e1ec16ee974c30565c8d9c75473
         'App\\Http\\Controllers\\BeritaController' => __DIR__ . '/../..' . '/app/Http/Controllers/BeritaController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\ProfilController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfilController.php',
         'App\\Models\\Berita' => __DIR__ . '/../..' . '/app/Models/Berita.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\home' => __DIR__ . '/../..' . '/app/Models/home.php',

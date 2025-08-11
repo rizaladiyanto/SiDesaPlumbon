@@ -27,6 +27,7 @@ return array(
     'App\\Http\\Controllers\\BeritaController' => $baseDir . '/app/Http/Controllers/BeritaController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\ProfilController' => $baseDir . '/app/Http/Controllers/ProfilController.php',
     'App\\Models\\Berita' => $baseDir . '/app/Models/Berita.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\home' => $baseDir . '/app/Models/home.php',

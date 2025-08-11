@@ -17,7 +17,7 @@
                 <ul class="space-y-2 text-sm">
                     <li><a href="/" class="hover:text-yellow-400">Beranda</a></li>
                     <li><a href="/profil" class="hover:text-yellow-400">Profil Desa</a></li>
-                    <li><a href="/layanan" class="hover:text-yellow-400">Berita</a></li>
+                    <li><a href="/layanan/berita" class="hover:text-yellow-400">Berita</a></li>
                     <li><a href="/layanan" class="hover:text-yellow-400">Layanan</a></li>
                     <li><a href="/produk-kkn" class="hover:text-yellow-400">Produk KKN</a></li>
                 </ul>
@@ -28,9 +28,9 @@
                     <li><a href="/surveilance/sdgs3" class="hover:text-yellow-400">Surveilance SDG 3</a></li>
                     <li><a href="/surveilance/sdgs6" class="hover:text-yellow-400">Surveilance SDG 6</a></li>
                     <li><a href="/surveilance/sdgs11" class="hover:text-yellow-400">Surveilance SDG 11</a></li>
-                    <li><a href="/sumberair/airbersih" class="hover:text-yellow-400">Data Sumber Air Bersih</a></li>
-                    <li><a href="/sumberair/petakekeringan" class="hover:text-yellow-400">Peta Kekeringan</a></li>
-                    <li><a href="/sumberair/petacurahhujan" class="hover:text-yellow-400">Peta Curah Hujan</a></li>
+                    <li><a href="/sumberair/MAT" class="hover:text-yellow-400">Muka Air Tanah</a></li>
+                    <li><a href="/sumberair/KAT" class="hover:text-yellow-400">Kualitas Air Tanah</a></li>
+                    <!-- <li><a href="/sumberair/petakekeringan" class="hover:text-yellow-400">Peta Kekeringan</a></li> -->
                 </ul>
             </div>
             <div>
