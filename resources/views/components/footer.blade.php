@@ -36,22 +36,16 @@
             <div>
                 <h4 class="font-semibold mb-4">Unduhan</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-yellow-400">Formulir Surveilance</a></li>
+                    <li><a href="{{ route('download.formulir.surveilance') }}" class="hover:text-yellow-400">Formulir Surveilance</a></li>
                     <li><a href="#" class="hover:text-yellow-400">Desain Revitalisasi Lapangan</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">Flipbook Profil Desa</a></li>
+                    <li><a href="https://heyzine.com/flip-book/5379000428.html" class="hover:text-yellow-400">Flipbook Profil Desa</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-semibold mb-4">Kontak</h4>
                 <div class="space-y-2 text-sm">
                     <p>Plumbon, Kec. Mojolaban, Kab. Sukoharjo, Jawa Tengah</p>
-                    <p>desaplumbon@gmail.com</p>
-                    <p>+62812345678</p>
-                </div>
-                <div class="flex space-x-4 mt-4">
-                    <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700"><span class="text-xs">f</span></a>
-                    <a href="#" class="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500"><span class="text-xs">t</span></a>
-                    <a href="#" class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700"><span class="text-xs">w</span></a>
+                    <p>kknplumbon2025@gmail.com</p>
                 </div>
             </div>
         </div>

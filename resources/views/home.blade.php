@@ -93,13 +93,12 @@
                         <iframe 
                             width="1000" 
                             height="500" 
-                            src="https://www.youtube.com/embed/WQvUW4QdWqA?si=jlYxMJ9btNEwnnu_" 
+                            src="https://www.youtube.com/embed/MFCFqg_SglU?si=5NakZGvrM8LBW87u" 
                             title="YouTube video player" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                             referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen
-                        >
+                            allowfullscreen>
                         </iframe>
                     </div>
                 </div>
