@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->text('sejarah');
+            $table->string('visi');
+            $table->text('misi')->nullable();
             $table->timestamps();
         });
     }

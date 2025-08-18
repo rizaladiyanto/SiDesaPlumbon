@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,4 @@ Route::get('/produk-kkn', function () {
     return view('produk-kkn');
 });
 
+Route::get('/download/formulir-surveilance', [DocumentController::class, 'downloadFormulirSurveilance'])->name('download.formulir.surveilance');

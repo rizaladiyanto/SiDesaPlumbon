@@ -45,9 +45,9 @@ class BeritaResource extends Resource
                 
                 Forms\Components\TextInput::make('kategori')
                     ->label('Nama Kategori')
-                    ->required()  // Menandakan kategori wajib diisi
-                    ->maxLength(255)  // Batas panjang karakter kategori
-                    ->placeholder('Masukkan nama kategori')  // Placeholder untuk input kategori
+                    ->required() 
+                    ->maxLength(255)
+                    ->placeholder('Masukkan nama kategori') 
                     ->columnSpanFull(),
                 
                 Forms\Components\Select::make('status')

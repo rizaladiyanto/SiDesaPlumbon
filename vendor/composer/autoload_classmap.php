@@ -26,6 +26,7 @@ return array(
     'App\\Filament\\Resources\\ProfileResource\\Pages\\ListProfiles' => $baseDir . '/app/Filament/Resources/ProfileResource/Pages/ListProfiles.php',
     'App\\Http\\Controllers\\BeritaController' => $baseDir . '/app/Http/Controllers/BeritaController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\DocumentController' => $baseDir . '/app/Http/Controllers/DocumentController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\ProfilController' => $baseDir . '/app/Http/Controllers/ProfilController.php',
     'App\\Models\\Berita' => $baseDir . '/app/Models/Berita.php',

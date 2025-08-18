@@ -93,7 +93,7 @@
                             Sebagian warga mengaku harus menghemat penggunaan air untuk kebutuhan rumah tangga. Tidak sedikit pula yang terpaksa mengambil air dari sungai terdekat, bahkan ada yang harus menunggu lama hingga air keluar dari sumbernya. Langkah-langkah ini menjadi strategi warga untuk bertahan di tengah keterbatasan pasokan air bersih selama musim kemarau.
                         </p>
 
-                        <img src="{{ asset('images/peta_kekeringan.jpg') }}" alt="Peta Kekeringan Desa Plumbon" class="max-w-4xl mx-auto mt-8 rounded-lg shadow-lg fade-in-up stagger-animation" style="--delay: 0.1+s;">
+                        <img src="{{ asset('images/peta_kekeringan.png') }}" alt="Peta Kekeringan Desa Plumbon" class="max-w-4xl mx-auto mt-8 rounded-lg shadow-lg fade-in-up stagger-animation" style="--delay: 0.1+s;">
                     </div>
                 </div>
             </section>

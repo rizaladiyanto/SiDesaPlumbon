@@ -3,15 +3,33 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        @vite('resources/css/app.css')
-
+        
         <title>SDG 11 - SiDesaPlumbon</title>
 
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/fontawesome-all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/leaflet.css') }}">
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/qgis2web.css') }}">
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/L.Control.Layers.Tree.css') }}">
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/L.Control.Locate.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/leaflet.photon.css') }}">
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/leaflet-measure.css') }}">
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/MarkerCluster.css') }}">
+        <link rel="stylesheet" href="{{ asset('/webgis/SDGs11/css/MarkerCluster.Default.css') }}">
+        
+        @vite('resources/css/app.css')
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+        <style>
+            #map {
+                height: 600px;
+                width: 100%;
+                border-radius: 0.5rem;
+            }
+        </style>
     </head>
     <body class="min-h-screen bg-gray-100">
         <x-header />
@@ -350,6 +368,17 @@
                     </div>
                 </div>
             </section>
+
+            <section id="peta-interaktif" class="py-16 bg-gray-50">
+                <div class="container mx-auto px-6 md:px-12">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Peta Sebaran Indikator SDGs 11</h2>
+                        <p class="text-lg text-gray-600">Visualisasi data SDGs 11 Desa Plumbon dalam bentuk peta interaktif.</p>
+                    </div>
+                    
+                    <div id="map"></div>
+                </div>
+            </section>
         </main>
 
         <x-footer />
@@ -368,13 +397,13 @@
             });
 
             const text = "SURVEILANCE SDGs 11";
-            let i = 0;
+            let j = 0;
             const typingEffect = document.getElementById('typingEffect');
 
             function typeWriter() {
-                if (i < text.length) {
-                    typingEffect.innerHTML += text.charAt(i);
-                    i++;
+                if (j < text.length) {
+                    typingEffect.innerHTML += text.charAt(j);
+                    j++;
                     setTimeout(typeWriter, 80);
                 } else {
                     typingEffect.classList.remove('typing');
@@ -398,6 +427,520 @@
                     observer.observe(element);
                 });
             });
+        </script>
+
+        <script src="{{ asset('/webgis/SDGs11/js/qgis2web_expressions.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/leaflet.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/leaflet.rotatedMarker.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/leaflet.pattern.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/leaflet-hash.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/Autolinker.min.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/rbush.min.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/labelgun.min.js') }}"></script> 
+        <script src="{{ asset('/webgis/SDGs11/js/labels.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/leaflet-measure.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/L.Control.Layers.Tree.min.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/L.Control.Locate.min.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/leaflet.markercluster.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/js/leaflet.photon.js') }}"></script>
+
+        <script src="{{ asset('/webgis/SDGs11/data/BatasRukunWarga_3.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/data/HasilCapaianSDGs11diDesaPlumbon_2.js') }}"></script>
+        <script src="{{ asset('/webgis/SDGs11/data/RukunWarga11_1.js') }}"></script>
+
+        <script>
+        var map = L.map('map', {
+            zoomControl:false, maxZoom:28, minZoom:1
+        }).fitBounds([[-7.603228004225992,110.82698433856959],[-7.574999977387668,110.88367897512377]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        // remove popup's row if "visible-with-data"
+        function removeEmptyRowsFromPopupContent(content, feature) {
+         var tempDiv = document.createElement('div');
+         tempDiv.innerHTML = content;
+         var rows = tempDiv.querySelectorAll('tr');
+         for (var i = 0; i < rows.length; i++) {
+             var td = rows[i].querySelector('td.visible-with-data');
+             var key = td ? td.id : '';
+             if (td && td.classList.contains('visible-with-data') && feature.properties[key] == null) {
+                 rows[i].parentNode.removeChild(rows[i]);
+             }
+         }
+         return tempDiv.innerHTML;
+        }
+        // add class to format popup if it contains media
+		function addClassToPopupIfMedia(content, popup) {
+			var tempDiv = document.createElement('div');
+			tempDiv.innerHTML = content;
+			if (tempDiv.querySelector('td img')) {
+				popup._contentNode.classList.add('media');
+					// Delay to force the redraw
+					setTimeout(function() {
+						popup.update();
+					}, 10);
+			} else {
+				popup._contentNode.classList.remove('media');
+			}
+		}
+        var zoomControl = L.control.zoom({
+            position: 'topleft'
+        }).addTo(map);
+        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0].innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0].className += ' fas fa-ruler';
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_SALITER_0');
+        map.getPane('pane_SALITER_0').style.zIndex = 400;
+        var layer_SALITER_0 = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}', {
+            pane: 'pane_SALITER_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_SALITER_0;
+        map.addLayer(layer_SALITER_0);
+        function pop_RukunWarga11_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">RW</th>\
+                        <td>' + (feature.properties['RW'] !== null ? autolinker.link(String(feature.properties['RW']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SDGS_3'] !== null ? autolinker.link(String(feature.properties['SDGS_3']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">DESA</th>\
+                        <td>' + (feature.properties['DESA'] !== null ? autolinker.link(String(feature.properties['DESA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Grafik</th>\
+                        <td>' + (feature.properties['Grafik'] !== null ? '<img src="{{ asset("/webgis/SDGs11/images") }}/' + String(feature.properties['Grafik']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['rwww'] !== null ? autolinker.link(String(feature.properties['rwww']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_RukunWarga11_1_0(feature) {
+            switch(String(feature.properties['RW'])) {
+                case '1':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '7':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '8':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '9':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '10':
+                    return {
+                pane: 'pane_RukunWarga11_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,203,73,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_RukunWarga11_1');
+        map.getPane('pane_RukunWarga11_1').style.zIndex = 401;
+        map.getPane('pane_RukunWarga11_1').style['mix-blend-mode'] = 'normal';
+        var layer_RukunWarga11_1 = new L.geoJson(json_RukunWarga11_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RukunWarga11_1',
+            layerName: 'layer_RukunWarga11_1',
+            pane: 'pane_RukunWarga11_1',
+            onEachFeature: pop_RukunWarga11_1,
+            style: style_RukunWarga11_1_0,
+        });
+        bounds_group.addLayer(layer_RukunWarga11_1);
+        map.addLayer(layer_RukunWarga11_1);
+        function pop_HasilCapaianSDGs11diDesaPlumbon_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['1'] !== null ? autolinker.link(String(feature.properties['1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['3'] !== null ? autolinker.link(String(feature.properties['3']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['4'] !== null ? autolinker.link(String(feature.properties['4']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['5'] !== null ? autolinker.link(String(feature.properties['5']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['7'] !== null ? autolinker.link(String(feature.properties['7']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['8'] !== null ? autolinker.link(String(feature.properties['8']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['9'] !== null ? autolinker.link(String(feature.properties['9']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['10'] !== null ? '<img src="{{ asset("/webgis/SDGs11/images/grafik_desa_sdgs11.jpg") }}">' : '') + '</td>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_HasilCapaianSDGs11diDesaPlumbon_2_0() {
+            return {
+                pane: 'pane_HasilCapaianSDGs11diDesaPlumbon_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,182,54,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_HasilCapaianSDGs11diDesaPlumbon_2');
+        map.getPane('pane_HasilCapaianSDGs11diDesaPlumbon_2').style.zIndex = 402;
+        map.getPane('pane_HasilCapaianSDGs11diDesaPlumbon_2').style['mix-blend-mode'] = 'normal';
+        var layer_HasilCapaianSDGs11diDesaPlumbon_2 = new L.geoJson(json_HasilCapaianSDGs11diDesaPlumbon_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_HasilCapaianSDGs11diDesaPlumbon_2',
+            layerName: 'layer_HasilCapaianSDGs11diDesaPlumbon_2',
+            pane: 'pane_HasilCapaianSDGs11diDesaPlumbon_2',
+            onEachFeature: pop_HasilCapaianSDGs11diDesaPlumbon_2,
+            style: style_HasilCapaianSDGs11diDesaPlumbon_2_0,
+        });
+        bounds_group.addLayer(layer_HasilCapaianSDGs11diDesaPlumbon_2);
+        map.addLayer(layer_HasilCapaianSDGs11diDesaPlumbon_2);
+        function pop_BatasRukunWarga_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['RW'] !== null ? autolinker.link(String(feature.properties['RW']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SDGS_3'] !== null ? autolinker.link(String(feature.properties['SDGS_3']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DESA'] !== null ? autolinker.link(String(feature.properties['DESA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Grafik'] !== null ? autolinker.link(String(feature.properties['Grafik']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_BatasRukunWarga_3_0() {
+            return {
+                pane: 'pane_BatasRukunWarga_3',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BatasRukunWarga_3');
+        map.getPane('pane_BatasRukunWarga_3').style.zIndex = 403;
+        map.getPane('pane_BatasRukunWarga_3').style['mix-blend-mode'] = 'normal';
+        var layer_BatasRukunWarga_3 = new L.geoJson(json_BatasRukunWarga_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BatasRukunWarga_3',
+            layerName: 'layer_BatasRukunWarga_3',
+            pane: 'pane_BatasRukunWarga_3',
+            onEachFeature: pop_BatasRukunWarga_3,
+            style: style_BatasRukunWarga_3_0,
+        });
+        bounds_group.addLayer(layer_BatasRukunWarga_3);
+        map.addLayer(layer_BatasRukunWarga_3);
+        var overlaysTree = [{
+            label: '<img src="{{ asset("/webgis/SDGs11/legend/BatasRukunWarga_3.png") }}" /> Batas Rukun Warga',
+            layer: layer_BatasRukunWarga_3
+        }, {
+            label: '<img src="{{ asset("/webgis/SDGs11/legend/HasilCapaianSDGs11diDesaPlumbon_2.png") }}" /> Hasil Capaian SDGs 11 di Desa Plumbon',
+            layer: layer_HasilCapaianSDGs11diDesaPlumbon_2
+        }, {
+            label: '<b>Hasil Capaian SDGs 11 per RW di Desa Plumbon</b>',
+            selectAllCheckbox: true,
+            children: [{
+                label: 'Rukun Warga 11<br /><table>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_1Sesuai0.png") }}" /></td><td>1 Sesuai </td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_2Sesuai1.png") }}" /></td><td>2 Sesuai</td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_3Sesuai2.png") }}" /></td><td>3 Sesuai</td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_4Sesuai3.png") }}" /></td><td>4 Sesuai</td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_5Sesuai4.png") }}" /></td><td>5 Sesuai</td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_6Sesuai5.png") }}" /></td><td>6 Sesuai</td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_7Sesuai6.png") }}" /></td><td>7 Sesuai</td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_8Sesuai7.png") }}" /></td><td>8 Sesuai</td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_9Sesuai8.png") }}" /></td><td>9 Sesuai</td></tr>' +
+                    '<tr><td style="text-align: center;"><img src="{{ asset("webgis/SDGs11/legend/RukunWarga11_1_10Sesuai9.png") }}" /></td><td>10 Sesuai</td></tr>' +
+                    '</table>',
+                layer: layer_RukunWarga11_1
+            }, ]
+        }, {
+            label: "SALITER ",
+            layer: layer_SALITER_0,
+            radioGroup: 'bm'
+        }, ]
+        var lay = L.control.layers.tree(null, overlaysTree, {
+            collapsed: false,
+        });
+        lay.addTo(map);
+
+		document.addEventListener("DOMContentLoaded", function() {
+            // set new Layers List height which considers toggle icon
+            function newLayersListHeight() {
+                var layerScrollbarElement = document.querySelector('.leaflet-control-layers-scrollbar');
+                if (layerScrollbarElement) {
+                    var layersListElement = document.querySelector('.leaflet-control-layers-list');
+                    var originalHeight = layersListElement.style.height 
+                        || window.getComputedStyle(layersListElement).height;
+                    var newHeight = parseFloat(originalHeight) - 50;
+                    layersListElement.style.height = newHeight + 'px';
+                }
+            }
+            var isLayersListExpanded = true;
+            var controlLayersElement = document.querySelector('.leaflet-control-layers');
+            var toggleLayerControl = document.querySelector('.leaflet-control-layers-toggle');
+            // toggle Collapsed/Expanded and apply new Layers List height
+            toggleLayerControl.addEventListener('click', function() {
+                if (isLayersListExpanded) {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                } else {
+                    controlLayersElement.classList.add('leaflet-control-layers-expanded');
+                }
+                isLayersListExpanded = !isLayersListExpanded;
+                newLayersListHeight()
+            });	
+			// apply new Layers List height if toggle layerstree
+			if (controlLayersElement) {
+				controlLayersElement.addEventListener('click', function(event) {
+					var toggleLayerHeaderPointer = event.target.closest('.leaflet-layerstree-header-pointer span');
+					if (toggleLayerHeaderPointer) {
+						newLayersListHeight();
+					}
+				});
+			}
+            // Collapsed/Expanded at Start to apply new height
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            // Collapsed touch/small screen
+            var isSmallScreen = window.innerWidth < 650;
+            if (isSmallScreen) {
+                setTimeout(function() {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                    isLayersListExpanded = !isLayersListExpanded;
+                }, 500);
+            }  
+        });       
+        setBounds();
+        var i = 0;
+        layer_RukunWarga11_1.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['rwww'] !== null?String('<div style="color: #323232; font-size: 11pt; font-family: \'Times New Roman\', sans-serif;">' + layer.feature.properties['rwww']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RukunWarga11_1'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var k = 0;
+        layer_HasilCapaianSDGs11diDesaPlumbon_2.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['1'] !== null?String('<div style="color: #323232; font-size: 12pt; font-weight: bold; font-family: \'Times New Roman\', sans-serif;">' + layer.feature.properties['1']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_HasilCapaianSDGs11diDesaPlumbon_2'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              k++;
+        });
+        resetLabels([layer_RukunWarga11_1,layer_HasilCapaianSDGs11diDesaPlumbon_2]);
+        map.on("zoomend", function(){
+            resetLabels([layer_RukunWarga11_1,layer_HasilCapaianSDGs11diDesaPlumbon_2]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_RukunWarga11_1,layer_HasilCapaianSDGs11diDesaPlumbon_2]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_RukunWarga11_1,layer_HasilCapaianSDGs11diDesaPlumbon_2]);
+        });
         </script>
     </body>
 </html>

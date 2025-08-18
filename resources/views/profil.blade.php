@@ -11,6 +11,17 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+        <style>
+            ol {
+                list-style-type: decimal;
+                text-align: justify;
+            }
+
+            ol li {
+                margin-bottom: 0.5rem;   
+            }
+        </style>
     </head>
     <body class="min-h-screen bg-gray-100">
         <x-header />
@@ -45,20 +56,14 @@
                         <div class="w-2/3 bg-white rounded-lg shadow-lg p-8 mx-auto mb-6 fade-in-left">
                             <h2 class="text-3xl font-bold text-gray-800 mb-4">Visi</h2>
                             <p class="text-xl text-gray-700 max-w-3xl mx-auto font-bold font-lora">
-                                “MENJADI DESA YANG BERDYA, MODERN, TRANSPARAN, DAN RELIGIUS“
+                                “{!! $profil->visi !!}“
                             </p>
                         </div>
 
                         <div class="w-2/3 bg-white rounded-lg shadow-lg p-8 mx-auto fade-in-right">
                             <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Misi</h2>
                             <ol class="list-decimal list-inside space-y-3 text-left px-4 font-medium">
-                                <li class="text-lg text-gray-700">Mewujudkan Pemerintahan yang efektif, bersih dan demokratis melalui penyelenggaraan Pemerintahan yang Profesional, Aspiratif, Partisipatif dan Transparan.</li>
-                                <li class="text-lg text-gray-700">Meningkatkan Kualitas dan Kuantitas sarana dan prasarana publik dan menerapkan pembangunan infrastruktur berkelanjutan.</li>
-                                <li class="text-lg text-gray-700">Mengoptimalkan ketepatan alokasi dan distribusi Sumber-sumber dana dan khususnya APBDes untuk peningkatan kesejahteraan masyarakat.</li>
-                                <li class="text-lg text-gray-700">Meningkatkan kecerdasan dan kualitas sumber daya manusia (SDM) yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa.</li>
-                                <li class="text-lg text-gray-700">Mendorong terciptanya Kamtibmas dalam kehidupan bernegara, berbangsa dan bermasyarakat melalui pembuatan Perdes, Penegakan Peraturan dan Pelaksanaan Hukum yang berkeadilan.</li>
-                                <li class="text-lg text-gray-700">Meningkatkan ekonomi kerakyatan yang berdaya saing.</li>
-                                <li class="text-lg text-gray-700">Peningkatan kegiatan bidang seni budaya dan olah raga.</li>
+                                {!! $profil->misi !!}
                             </ol>
                         </div>
                     </div>

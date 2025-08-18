@@ -32,7 +32,20 @@ class ProfileResource extends Resource
                     ->placeholder('Masukkan sejarah desa')
                     ->required()
                     ->columnSpanFull(),
+
+                Forms\Components\RichEditor::make('visi')
+                    ->label('Visi')
+                    ->placeholder('Masukkan visi desa')
+                    ->required()
+                    ->columnSpanFull(),
+
+                Forms\Components\RichEditor::make('misi')
+                    ->label('Misi')
+                    ->placeholder('Masukkan misi desa')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
+            
     }
 
     public static function table(Table $table): Table
@@ -41,8 +54,25 @@ class ProfileResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('sejarah')
                     ->label('Sejarah')
-                    ->limit(100) 
-                    ->html() 
+                    ->html()         
+                    ->wrap()
+                    ->lineClamp(3)        
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('visi')
+                    ->label('Visi')
+                    ->html()
+                    ->wrap()
+                    ->lineClamp(2)
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('misi')
+                    ->label('Misi')
+                    ->html()
+                    ->wrap()
+                    ->lineClamp(2)
                     ->sortable()
                     ->searchable(),
             ])
