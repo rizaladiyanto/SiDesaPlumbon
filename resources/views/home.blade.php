@@ -74,8 +74,8 @@
             <section id="profil" class="py-16 bg-gray-50">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-12 fade-in-up">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Tentang Kami</h2>
-                        <p class="text-lg text-gray-600 max-w-5xl mx-auto text-justify">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Tentang Kami</h2>
+                        <p class="text-sm md:text-lg text-gray-600 max-w-5xl mx-auto text-justify">
                             {!! nl2br(e(strip_tags($home->about))) !!}
                         </p>
                     </div>
@@ -93,7 +93,7 @@
                         <iframe 
                             width="1000" 
                             height="500" 
-                            src="https://www.youtube.com/embed/MFCFqg_SglU?si=5NakZGvrM8LBW87u" 
+                            src="https://www.youtube.com/embed/3KP07DXH0BA?si=s9TUTMaB2VlmD3kZ"
                             title="YouTube video player" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 

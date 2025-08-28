@@ -53,9 +53,9 @@
             <section class="py-16 bg-white">
                 <div class="container mx-auto px-6 md:px-12">
                     <div class="max-w-5xl mx-auto text-center fade-in-up">
-                        <h2 class="text-4xl font-bold text-gray-800 mb-6">SDG 3: Kesehatan dan Kesejahteraan</h2>
+                        <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-6">SDG 3: Kesehatan dan Kesejahteraan</h2>
                         <div class="w-24 h-1 bg-black mx-auto mb-8"></div>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-8 text-justify">
+                        <p class="text-sm md:text-lg text-gray-600 leading-relaxed mb-8 text-justify">
                             Sustainable Development Goal 3 bertujuan untuk memastikan kehidupan yang sehat dan mendorong kesejahteraan untuk semua di segala usia. 
                             SDG ini mencakup berbagai aspek kesehatan mulai dari kesehatan ibu dan anak, pencegahan penyakit, akses terhadap layanan kesehatan, 
                             hingga promosi kesehatan mental dan fisik.
@@ -64,259 +64,260 @@
                 </div>
             </section>
 
-            <section class="py-16 bg-gray-50">
-                <div class="container mx-auto px-6 md:px-12">
-                    <div class="text-center mb-12 max-w-5xl mx-auto fade-in-up">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Hasil Analisis SDG 3 Desa Plumbon</h2>
-                        <p class="text-lg text-gray-600 text-justify">
-                            Analisis data dilakukan secara deskriptif dengan membuat distribusi frekuensi untuk tiap indikator SDGs Desa 3. Hasil distribusi frekuensi menggambarkan capaian indikator di tiap RW dan di level desa. Berdasarkan hasil distribusi frekuensi tersebut, maka dilakukananalisis perbandingan dengan standar indikator capaian SDGs Desa dan penilaian dalam bentuk kategori capaian untuk tiap indikator.
-                        </p>
-                    </div>
+<section class="py-8 md:py-16 bg-gray-50 fade-in-up">
+    <div class="container mx-auto px-4 md:px-6 lg:px-12">
+        <div class="text-center mb-8 md:mb-12 max-w-5xl mx-auto fade-in-up">
+            <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-4">Hasil Analisis SDG 3 Desa Plumbon</h2>
+            <p class="text-sm md:text-base lg:text-lg text-gray-600 text-justify">
+                Analisis data dilakukan secara deskriptif dengan membuat distribusi frekuensi untuk tiap indikator SDGs Desa 3. Hasil distribusi frekuensi menggambarkan capaian indikator di tiap RW dan di level desa. Berdasarkan hasil distribusi frekuensi tersebut, maka dilakukan analisis perbandingan dengan standar indikator capaian SDGs Desa dan penilaian dalam bentuk kategori capaian untuk tiap indikator.
+            </p>
+        </div>
 
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-7xl mx-auto fade-in-right">
-                        <div class="bg-gray-900 text-white px-6 py-4">
-                            <h3 class="text-xl font-semibold">Tabel Perbandingan Distribusi Frekuensi Berdasarkan Indikator SDGs Desa 3</h3>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Indikator</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 1</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 2</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 3</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 4</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 5</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 6</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 7</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 8</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 9</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">RW 10</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Desa</th>
-                                        <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Target</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
-                                    <tr>
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">BPJS Kesehatan (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">87.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">82.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">97.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">79.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">88.1</td>
-                                        <td class="px-4 py-3 text-sm text-center">71.1</td>
-                                        <td class="px-4 py-3 text-sm text-center">66.7</td>
-                                        <td class="px-4 py-3 text-sm text-center">95.7</td>
-                                        <td class="px-4 py-3 text-sm text-center">92.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">90.0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">85.0</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">100%</td>
-                                    </tr>
-                                    <tr class="bg-gray-50">
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Unmet Need Pelayanan Kesehatan (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">29.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">32.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">27.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">20.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">14.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">15.8</td>
-                                        <td class="px-4 py-3 text-sm text-center">33.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">26.1</td>
-                                        <td class="px-4 py-3 text-sm text-center">29.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">32.0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">26.3</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">0%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Persalinan di Fasilitas Kesehatan (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">65.5</td>
-                                        <td class="px-4 py-3 text-sm text-center">87.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">60.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">82.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">71.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">31.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">70.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">78.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">70.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">70.0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">72.1</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">100%</td>
-                                    </tr>
-                                    <tr class="bg-gray-50">
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Angka Kematian Ibu (AKI) per Kelahiran</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">0</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">0%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Angka Kematian Bayi (AKB) per Kelahiran</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">0</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">0%</td>
-                                    </tr>
-                                    <tr class="bg-gray-50">
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Imunisasi Dasar Lengkap pada Bayi (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">8.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">89.1</td>
-                                        <td class="px-4 py-3 text-sm text-center">90.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">73.5</td>
-                                        <td class="px-4 py-3 text-sm text-center">81.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">86.8</td>
-                                        <td class="px-4 py-3 text-sm text-center">80.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">87.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">77.8</td>
-                                        <td class="px-4 py-3 text-sm text-center">98.0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">73.9</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">100%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Prevalensi HIV,TBC, Tekanan darah tinggi, obesitas, narkoba (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">43.1</td>
-                                        <td class="px-4 py-3 text-sm text-center">47.8</td>
-                                        <td class="px-4 py-3 text-sm text-center">36.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">23.5</td>
-                                        <td class="px-4 py-3 text-sm text-center">66.7</td>
-                                        <td class="px-4 py-3 text-sm text-center">36.8</td>
-                                        <td class="px-4 py-3 text-sm text-center">70.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">73.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">25.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">3.8</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">37.1</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">0%</td>
-                                    </tr>
-                                    <tr class="bg-gray-50">
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Jumlah RT yang menjalankan eliminasi malaria, kusta, dan filariasis (kaki gajah) (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">4.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">0.3</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">100%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Persentase Perokok (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">6.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">10.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">9.1</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">5.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">20.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">8.7</td>
-                                        <td class="px-4 py-3 text-sm text-center">3.7</td>
-                                        <td class="px-4 py-3 text-sm text-center">6.0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">14.5</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">0%</td>
-                                    </tr>
-                                    <tr class="bg-gray-50">
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Posyandu Kesehatan Jiwa pada RT (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">100</td>
-                                        <td class="px-4 py-3 text-sm text-center">6.5</td>
-                                        <td class="px-4 py-3 text-sm text-center">3.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">3.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">16.8</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">100%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Korban penyalahgunaan NAPZA (narkoba) ditangani panti rehabilitasi sosial (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.2</td>
-                                        <td class="px-4 py-3 text-sm text-center">6.1</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">1.3</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">0%</td>
-                                    </tr>
-                                    <tr class="bg-gray-50">
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Korban mati dan luka berat akibat kecelakaan lalu lintas (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">3.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">6.5</td>
-                                        <td class="px-4 py-3 text-sm text-center">6.1</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">4.8</td>
-                                        <td class="px-4 py-3 text-sm text-center">13.2</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">14.8</td>
-                                        <td class="px-4 py-3 text-sm text-center">16.0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">7.1</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">0%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900 max-w-xs">Prevalensi pemakaian kontrasepsi jangka pendek dan jangka panjang pada usia produktif (18-49 tahun) (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">31.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">41.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">45.5</td>
-                                        <td class="px-4 py-3 text-sm text-center">38.2</td>
-                                        <td class="px-4 py-3 text-sm text-center">42.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">52.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">36.7</td>
-                                        <td class="px-4 py-3 text-sm text-center">60.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">51.9</td>
-                                        <td class="px-4 py-3 text-sm text-center">40.0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">42.4</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">100%</td>
-                                    </tr>
-                                    <tr class="bg-gray-50">
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Angka kelahiran pada remaja usia 15-19 tahun (%)</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">4.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">3.0</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.4</td>
-                                        <td class="px-4 py-3 text-sm text-center">2.6</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center">4.3</td>
-                                        <td class="px-4 py-3 text-sm text-center">3.7</td>
-                                        <td class="px-4 py-3 text-sm text-center">0</td>
-                                        <td class="px-4 py-3 text-sm text-center font-semibold">1.8</td>
-                                        <td class="px-4 py-3 text-sm text-center text-green-600 font-semibold">0%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">Total Fertility Rate dibawah 1,5</td>
-                                        <td colspan="12" class="px-4 py-3 text-sm text-center font-semibold text-gray-500">DATA TIDAK TERSEDIA</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="bg-white rounded-lg shadow-lg w-full mx-auto fade-in-up">
+            <div class="bg-gray-900 text-white px-3 md:px-6 py-3 md:py-4">
+                <h3 class="text-sm md:text-lg lg:text-xl font-semibold">Tabel Perbandingan Distribusi Frekuensi Berdasarkan Indikator SDGs Desa 3</h3>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-50 sticky top-0">
+                        <tr>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap sticky left-0 bg-gray-50 z-10">Indikator</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 1</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 2</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 3</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 4</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 5</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 6</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 7</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 8</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 9</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">RW 10</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Desa</th>
+                            <th class="px-2 md:px-4 py-2 md:py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Target</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-white z-10">BPJS Kesehatan (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">87.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">82.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">97.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">79.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">88.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">71.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">66.7</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">95.7</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">92.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">90.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">85.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">100%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-gray-50 z-10">Unmet Need Pelayanan Kesehatan (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">29.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">32.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">27.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">20.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">14.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">15.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">33.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">26.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">29.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">32.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">26.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">0%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-white z-10">Persalinan di Fasilitas Kesehatan (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">65.5</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">87.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">60.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">82.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">71.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">31.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">70.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">78.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">70.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">70.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">72.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">100%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-gray-50 z-10">Angka Kematian Ibu (AKI) per Kelahiran</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">0%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-white z-10">Angka Kematian Bayi (AKB) per Kelahiran</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">0%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-gray-50 z-10">Imunisasi Dasar Lengkap pada Bayi (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">8.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">89.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">90.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">73.5</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">81.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">86.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">80.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">87.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">77.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">98.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">73.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">100%</td>
+                        </tr>
+                         <tr>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-white z-10">Prevalensi HIV,TBC, Tekanan darah tinggi, obesitas, narkoba (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">43.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">47.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">36.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">23.5</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">66.7</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">36.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">70.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">73.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">25.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">3.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">37.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">0%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-gray-50 z-10">Jumlah RT yang menjalankan eliminasi malaria, kusta, dan filariasis (kaki gajah) (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">4.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">0.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">100%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-white z-10">Persentase Perokok (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">6.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">10.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">9.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">5.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">20.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">8.7</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">3.7</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">6.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">14.5</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">0%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-gray-50 z-10">Posyandu Kesehatan Jiwa pada RT (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">100</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">6.5</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">3.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">3.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">16.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">100%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-white z-10">Korban penyalahgunaan NAPZA (narkoba) ditangani panti rehabilitasi sosial (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.2</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">6.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">1.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">0%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-gray-50 z-10">Korban mati dan luka berat akibat kecelakaan lalu lintas (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">3.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">6.5</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">6.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">4.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">13.2</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">14.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">16.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">7.1</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">0%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 sticky left-0 bg-white z-10">Prevalensi pemakaian kontrasepsi jangka pendek dan jangka panjang pada usia produktif (18-49 tahun) (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">31.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">41.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">45.5</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">38.2</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">42.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">52.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">36.7</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">60.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">51.9</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">40.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">42.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">100%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-gray-50 z-10">Angka kelahiran pada remaja usia 15-19 tahun (%)</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">4.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">3.0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.4</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">2.6</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">4.3</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">3.7</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap">0</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap font-semibold">1.8</td>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm text-center whitespace-nowrap text-green-600 font-semibold">0%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium text-gray-900 whitespace-nowrap sticky left-0 bg-white z-10">Total Fertility Rate dibawah 1,5</td>
+                            <td colspan="12" class="px-4 py-3 text-sm text-center font-semibold text-gray-500">DATA TIDAK TERSEDIA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
 
             <section class="py-16 bg-white">
                 <div class="container mx-auto px-6 md:px-12">

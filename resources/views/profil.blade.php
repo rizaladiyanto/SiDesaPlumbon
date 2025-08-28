@@ -110,8 +110,8 @@
             <section id="profil" class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-12 fade-in-up">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Sejarah Desa Plumbon</h2>
-                        <p class="text-lg text-gray-600 max-w-5xl mx-auto text-justify">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Sejarah Desa Plumbon</h2>
+                        <p class="text-sm md:text-lg text-gray-600 max-w-5xl mx-auto text-justify">
                             {!! nl2br(e(strip_tags($profil->sejarah))) !!}
                         </p>
                     </div>
@@ -119,21 +119,27 @@
             </section>
 
             <!-- About Section -->
-            <section id="profil" class="py-16 bg-gray-50">
-                <div class="max-w-7xl mx-auto px-6">
-                    <div class="text-center mb-8">
-                        <div class="w-2/3 bg-white rounded-lg shadow-lg p-8 mx-auto mb-6 fade-in-left">
-                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Visi</h2>
-                            <p class="text-xl text-gray-700 max-w-3xl mx-auto font-bold font-lora">
-                                “{!! $profil->visi !!}“
-                            </p>
+            <section id="profil" class="py-8 md:py-16 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div class="space-y-6 md:space-y-8">
+                        <!-- Visi Card -->
+                        <div class="w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 md:p-8 fade-in-left">
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 text-center">Visi</h2>
+                            <div class="text-center">
+                                <p class="text-lg md:text-xl text-gray-700 font-bold font-lora leading-relaxed">
+                                    "{!! $profil->visi !!}"
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="w-2/3 bg-white rounded-lg shadow-lg p-8 mx-auto fade-in-right">
-                            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Misi</h2>
-                            <ol class="list-decimal list-inside space-y-3 text-left px-4 font-medium">
-                                {!! $profil->misi !!}
-                            </ol>
+                        <!-- Misi Card -->
+                        <div class="w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 md:p-8 fade-in-right">
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Misi</h2>
+                            <div class="prose max-w-none">
+                                <ol class="list-decimal list-inside space-y-3 md:space-y-4 text-left text-sm md:text-base font-medium text-gray-700 pl-2 md:pl-4">
+                                    {!! $profil->misi !!}
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,16 +153,17 @@
                     </div>
                     
                     <div class="flex justify-center">
-                        <iframe 
+                        <iframe
                             width="1000" 
                             height="500" 
-                            src="https://www.youtube.com/embed/MFCFqg_SglU?si=5NakZGvrM8LBW87u" 
+                            src="https://www.youtube.com/embed/3KP07DXH0BA?si=s9TUTMaB2VlmD3kZ"
                             title="YouTube video player" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                             referrerpolicy="strict-origin-when-cross-origin" 
                             allowfullscreen>
                         </iframe>
+
                     </div>
                 </div>
             </section>
